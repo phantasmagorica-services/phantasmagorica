@@ -1,0 +1,48 @@
+// DM Environment file for phantasmagorica.dme.
+// All manual changes should be made outside the BEGIN_ and END_ blocks.
+// New source code should be placed in .dm files: choose File/New --> Code File.
+
+// BEGIN_INTERNALS
+// END_INTERNALS
+
+// BEGIN_FILE_DIR
+#define FILE_DIR .
+// END_FILE_DIR
+
+// BEGIN_PREFERENCES
+#define DEBUG
+// END_PREFERENCES
+
+// BEGIN_INCLUDE
+#include "b_internal\internal.dm"
+#include "backend\code\__core.dm"
+#include "backend\code\_boot.dm"
+#include "backend\code\world.dm"
+#include "backend\code\__DEFINES\_bitfields.dm"
+#include "backend\code\__DEFINES\_lists.dm"
+#include "backend\code\__DEFINES\math.dm"
+#include "backend\code\__DEFINES\tick.dm"
+#include "backend\code\__DEFINES\_flags\atom.dm"
+#include "backend\code\__DEFINES\_flags\turf.dm"
+#include "backend\code\__DEFINES\dylibs\spaceman_dmm.dm"
+#include "backend\code\__DEFINES\misc\invisibility.dm"
+#include "backend\code\__HELPERS\comparators.dm"
+#include "backend\code\__HELPERS\misc.dm"
+#include "backend\code\__HELPERS\datastructures\priority_queue.dm"
+#include "backend\code\__HELPERS\lists\shuffle.dm"
+#include "backend\code\__HELPERS\lists\sort.dm"
+#include "backend\code\__HELPERS\math\angle.dm"
+#include "backend\code\__HELPERS\math\distance.dm"
+#include "backend\code\datums\datum.dm"
+#include "backend\code\game\areas\area.dm"
+#include "backend\code\game\areas\subtypes\unallocated.dm"
+#include "backend\code\game\atoms\atom.dm"
+#include "backend\code\game\atoms\movable\movable.dm"
+#include "backend\code\game\clients\clients.dm"
+#include "backend\code\game\mobs\mob.dm"
+#include "backend\code\game\objs\obj.dm"
+#include "backend\code\game\turfs\turf.dm"
+#include "backend\code\game\turfs\subtypes\unallocated.dm"
+#include "d_internal\internal.dm"
+// END_INCLUDE
+

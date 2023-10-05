@@ -14,5 +14,6 @@
 
 # Ignore compiled artifacts
 *.dmb
+*.int
 *.lk
 *.rsc

@@ -1,0 +1,7 @@
+/**
+ * BYOND invisibliity values
+ */
+
+#define INVISIBILITY_NONE 0
+#define INVISIBILITY_MAXIMUM 100
+#define INVISIBILITY_ABSTRACT 101
