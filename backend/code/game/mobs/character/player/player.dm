@@ -1,0 +1,1 @@
+/mob/character/player
