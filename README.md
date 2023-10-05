@@ -4,6 +4,8 @@
 
 Phantasmagorica will provide a generic backend-content structured project for developing TTRPG-likes in BYOND.
 
+The actual game in this codebase is a Pathfinder-like system.
+
 ## Why
 
 It's tiring to have Space Station 13 be the only game with reasonable code structure. TT/RPGs are fun but the codebase secrecy going around is utterly senseless from the perspective of someone used to open-source codebases. The code quality of these codebases, despite their wide plethora of features, tends to be tolerable at best, and utterly unmaintainable at worst.
@@ -24,6 +26,23 @@ This codebase is explicitly licensed under the MIT license. This is to enable ga
 
 - /backend: All global systems should reside in here.
 - /content: All game-specific overrides should reside in here, unless otherwise impossible.
+
+## Building / Running / Hosting
+
+### Prerequisites
+
+- [tgstation-server (https://github.com/tgstation/tgstation-server)](https://github.com/tgstation/tgstation-server) (Only if hosting)
+- [MariaDB (https://mariadb.org/download)](https://mariadb.org/download)
+
+`-- TODO --`
+
+### Building
+
+`-- TODO --`
+
+### Hosting
+
+`-- TODO --`
 
 ## Attributions
 
