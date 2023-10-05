@@ -11,3 +11,9 @@
  */
 /datum/proc/clone()
 	CRASH("not implemented")
+
+/**
+ * called when we're being deleted
+ */
+/datum/Destroy()
+	#warn gc system

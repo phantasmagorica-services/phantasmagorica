@@ -63,3 +63,9 @@
 #define DYLIB_CALL call
 #endif
 
+//* Deletion
+
+#define QDEL_NULL(THING) if(!isnull(THING)) { qdel(THING); THING = null; };
+#define QDEL_LIST(LIST) if(!isnull(LIST)) { for(var/i in 1 to length(LIST)) { qdel(LIST[i]; )}; LIST.len = 0; LIST = null;}
+#define QDEL_LIST_ASSOC_VAL if(!isnull(LIST)) { for(var/key in LIST) { qdel(LIST[key]); }; LIST.len = 0; LIST = null;}
+#define QDEL_LIST_ASSOC_KEY if(!isnull(LIST)) { for(var/key in LIST) { qdel(key); }; LIST.len = 0; LIST = null;}
