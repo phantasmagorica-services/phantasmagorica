@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "platymuus.dm-langclient",
+        "gbasood.byond-dm-language-support",
+        "editorconfig.editorconfig",
+        "anturk.dmi-editor",
+        "stylemistake.auto-comment-blocks"
+    ]
+}

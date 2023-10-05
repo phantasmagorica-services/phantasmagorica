@@ -1,0 +1,26 @@
+{
+	"eslint.nodePath": "./tgui/.yarn/sdks",
+	"eslint.workingDirectories": [
+		"./tgui"
+	],
+	"typescript.tsdk": "./tgui/.yarn/sdks/typescript/lib",
+	"typescript.enablePromptUseWorkspaceTsdk": true,
+	"search.exclude": {
+		"**/.yarn": true
+	},
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": true
+	},
+	"files.eol": "\n",
+	"files.insertFinalNewline": true,
+	"gitlens.advanced.blame.customArguments": ["-w"],
+	"[javascript]": {
+		"editor.rulers": [120]
+	},
+	"[typescript]": {
+		"editor.rulers": [120]
+	},
+	"[scss]": {
+		"editor.rulers": [120]
+	}
+}

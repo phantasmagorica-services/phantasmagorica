@@ -1,0 +1,18 @@
+### GAME ###
+
+# Game - Configuration
+/config
+!/config/example
+
+# Game - Data
+/data
+
+### BYOND ###
+
+# Ignore BYOND config
+/cfg
+
+# Ignore compiled artifacts
+*.dmb
+*.lk
+*.rsc
