@@ -19,7 +19,8 @@
 
 /mob/character/Initialize(mapload)
 	. = ..()
-	#warn impl - stats
+	// immediately recalculate stats
+	recalculate_stats()
 
 /mob/character/Destroy()
 	// delete, stat_base is not shared
