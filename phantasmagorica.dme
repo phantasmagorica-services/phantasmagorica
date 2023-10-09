@@ -7,15 +7,19 @@
 
 // BEGIN_FILE_DIR
 #define FILE_DIR .
+#define FILE_DIR "backend"
+#define FILE_DIR "backend/icons"
+#define FILE_DIR "backend/icons/debug"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
 #define DEBUG
 // END_PREFERENCES
 
+#include "backend\code\___include_first.dm"
+
 // BEGIN_INCLUDE
 #include "todolist.dm"
-#include "b_internal\internal.dm"
 #include "backend\code\__core.dm"
 #include "backend\code\_boot.dm"
 #include "backend\code\world.dm"
@@ -66,6 +70,6 @@
 #include "backend\code\game\objs\obj.dm"
 #include "backend\code\game\turfs\turf.dm"
 #include "backend\code\game\turfs\subtypes\unallocated.dm"
-#include "d_internal\internal.dm"
 // END_INCLUDE
 
+#include "backend\code\___include_last.dm"
