@@ -16,10 +16,9 @@
 #define DEBUG
 // END_PREFERENCES
 
-#include "backend\code\___include_first.dm"
-
 // BEGIN_INCLUDE
 #include "todolist.dm"
+#include "backend\code\___include_first.dm"
 #include "backend\code\__core.dm"
 #include "backend\code\_boot.dm"
 #include "backend\code\world.dm"
@@ -72,4 +71,5 @@
 #include "backend\code\game\turfs\subtypes\unallocated.dm"
 // END_INCLUDE
 
+/// Leave this here, do not touch it.
 #include "backend\code\___include_last.dm"
