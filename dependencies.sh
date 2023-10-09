@@ -1,24 +1,20 @@
 #!/bin/sh
 
-#Project dependencies file
-#Final authority on what's required to fully build the project
+## Shell file holding variables of project dependency versions to build
 
-# byond version
+# BYOND
 export BYOND_MAJOR=514
-export BYOND_MINOR=1588
+export BYOND_MINOR=1589
 
-#rust_g git tag
-export RUST_G_VERSION=2.0.1-experimental-1
+# rust_g
+export RUST_G_VERSION="2.0.1-experimental-1"
 
-#node version
+# node.js
 export NODE_VERSION=14
-export NODE_VERSION_PRECISE=14.16.1
+export NODE_VERSION_PRECISE="14.16.1"
 
-# SpacemanDMM git tag
-export SPACEMAN_DMM_VERSION=suite-1.7.2
+# SpacemanDMM
+export SPACEMAN_DMM_VERSION="suite-1.7.2"
 
-# Extools git tag
-# export EXTOOLS_VERSION=v0.0.7
-
-# Python version for mapmerge and other tools
-export PYTHON_VERSION=3.7.9
+# Python
+export PYTHON_VERSION="3.7.9"
