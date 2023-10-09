@@ -28,6 +28,7 @@
 #include "backend\code\__DEFINES\tick.dm"
 #include "backend\code\__DEFINES\_flags\atom.dm"
 #include "backend\code\__DEFINES\_flags\turf.dm"
+#include "backend\code\__DEFINES\dylibs\rust_g.dm"
 #include "backend\code\__DEFINES\dylibs\spaceman_dmm.dm"
 #include "backend\code\__DEFINES\misc\invisibility.dm"
 #include "backend\code\__HELPERS\comparators.dm"
