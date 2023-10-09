@@ -14,6 +14,7 @@
 // END_PREFERENCES
 
 // BEGIN_INCLUDE
+#include "todolist.dm"
 #include "b_internal\internal.dm"
 #include "backend\code\__core.dm"
 #include "backend\code\_boot.dm"
