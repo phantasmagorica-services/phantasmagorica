@@ -85,6 +85,12 @@
 #include "backend\code\modules\tgui\states\inventory.dm"
 #include "backend\code\modules\tgui\states\observer.dm"
 #include "backend\code\modules\tgui\states\self.dm"
+#include "backend\code\modules\tgui_panel\audio.dm"
+#include "backend\code\modules\tgui_panel\external.dm"
+#include "backend\code\modules\tgui_panel\message.dm"
+#include "backend\code\modules\tgui_panel\telemetry.dm"
+#include "backend\code\modules\tgui_panel\tgui_panel.dm"
+#include "backend\code\modules\tgui_panel\to_chat.dm"
 // END_INCLUDE
 
 /// Leave this here, do not touch it.
