@@ -7,13 +7,6 @@
 
 // BEGIN_FILE_DIR
 #define FILE_DIR .
-#define FILE_DIR "backend"
-#define FILE_DIR "backend/icons"
-#define FILE_DIR "backend/icons/debug"
-#define FILE_DIR "tgui"
-#define FILE_DIR "tgui/packages"
-#define FILE_DIR "tgui/packages/tgui"
-#define FILE_DIR "tgui/packages/tgui/assets"
 // END_FILE_DIR
 
 // BEGIN_PREFERENCES
