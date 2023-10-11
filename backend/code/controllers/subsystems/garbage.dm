@@ -1,3 +1,4 @@
+SUBSYSTEM_DEF(garbage)
 
 #warn impl
 

@@ -1,10 +1,9 @@
-
-#warn impl
-
 /**
  *! Copyright (c) 2020 Aleksej Komarov
  *! SPDX-License-Identifier: MIT
  */
+
+#warn impl
 
 /**
  * tgui subsystem
@@ -12,8 +11,8 @@
  * Contains all tgui state and subsystem code.
  *
  */
-/datum/controller/subsystem/tgui
-	name = "tgui"
+SUBSYSTEM_DEF(tgui)
+	name = "TGUI"
 	wait = 9
 	subsystem_flags = SS_NO_INIT
 	priority = FIRE_PRIORITY_TGUI
