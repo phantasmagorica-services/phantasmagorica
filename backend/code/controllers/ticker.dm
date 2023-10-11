@@ -1,6 +1,6 @@
 /**
- * ticks subsystems that requires ticking
+ * # Ticker
  */
-/datum/controller/ticker
+CONTROLLER_DEF(ticker, Ticker)
 
-#warn today i build a process scheduler
+#warn impl

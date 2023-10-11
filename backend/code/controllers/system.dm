@@ -1,3 +1,8 @@
-/datum/controller/system
+/**
+ * # System controller
+ *
+ * Manages startup, shutdown, handles everything
+ */
+CONTROLLER_DEF(system, System)
 
-#warn handle subsystem init/tracking
+#warn impl

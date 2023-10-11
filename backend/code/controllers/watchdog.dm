@@ -1,6 +1,6 @@
 /**
- * keeps the ticker going if it crashes
+ * # Watchdog
  */
-/datum/controller/watchdog
+CONTROLLER_DEF(watchdog, Watchdog)
 
-#warn today i build a process scheduler
+#warn impl

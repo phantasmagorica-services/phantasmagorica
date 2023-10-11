@@ -1,6 +1,6 @@
 /**
  * entity-relational mapping systems
  */
-/datum/controller/mapper
+/datum/controller/entitymap
 
 #warn impl
