@@ -1,2 +1,2 @@
-#define DEFINE_BITFLAGS(key, types, varnames, flagdefs)
-#define BITFLAG(name, value)
+#define DEFINE_BITFIELD(KEY, CONSTRAINTS, FLAGS)
+#define BITFIELD(NAME, VALUE)

@@ -1,3 +1,5 @@
+
+#warn impl
 /world
 	name = "Phantasmagorica"
 	fps = 40

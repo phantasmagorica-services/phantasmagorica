@@ -5,10 +5,10 @@
 /// Initialized by atom initialization
 #define ATOM_FLAG_INITIALIZED (1<<0)
 
-DEFINE_BITFLAGS(atom_flags, list(
-	/atom,
+DEFINE_BITFIELD(atom_flags, list(
+	/atom = list(
+		"atom_flags",
+	),
 ), list(
-	"atom_flags",
-), list(
-	BITFLAG("Initialized", ATOM_FLAG_INITIALIZED),
+	BITFIELD("Initialized", ATOM_FLAG_INITIALIZED),
 ))

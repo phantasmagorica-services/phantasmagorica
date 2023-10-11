@@ -2,11 +2,12 @@
  * Bitflags for /turf/var/turf_flags
  */
 
-DEFINE_BITFLAGS(turf_flags, list(
-	/turf,
+DEFINE_BITFIELD(turf_flags, list(
+	/turf = list(
+		"turf_flags"
+	),
 ), list(
-	"turf_flags",
-), list(
+	// none yet
 ))
 
 //* /turf_path_danger var on /turf
@@ -15,11 +16,11 @@ DEFINE_BITFLAGS(turf_flags, list(
 /// will just fucking obliterate you
 #define TURF_PATH_DANGER_ANNIHILATION (1<<1)
 
-DEFINE_BITFLAGS(turf_path_danger, list(
-	/turf,
+DEFINE_BITFIELD(turf_path_danger, list(
+	/turf = list(
+		"turf_path_danger",
+	),
 ), list(
-	"turf_path_danger",
-), list(
-	BITFLAG("Falling", TURF_PATH_DANGER_FALL),
-	BITFLAG("Annihilation", TURF_PATH_DANGER_ANNIHILATION),
+	BITFIELD("Falling", TURF_PATH_DANGER_FALL),
+	BITFIELD("Annihilation", TURF_PATH_DANGER_ANNIHILATION),
 ))
