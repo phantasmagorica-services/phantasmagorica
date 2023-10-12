@@ -42,3 +42,9 @@
 
 /datum/proc/__raise_signal(signal, ...)
 	#warn impl
+
+/**
+ * do we count as containing someone? used for UIs and other checks
+ */
+/datum/proc/contains(mob/user)
+	return FALSE

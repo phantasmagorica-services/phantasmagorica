@@ -18,3 +18,6 @@
 
 /atom/clone(x, y, z)
 	CRASH("not implemented")
+
+/atom/contains(mob/user)
+	return user in contents

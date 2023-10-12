@@ -39,7 +39,7 @@
  */
 /datum/global_proc_sentinel
 
-#define GLOBAL_PROC /datum/__global_proc
+#define GLOBAL_PROC /datum/__global_proc_sentinel
 
 /**
  * invokes something asynchronously

@@ -16,15 +16,15 @@ GLOBAL_LIST_EMPTY(clients)
 /client/New()
 	#warn impl
 	// register global
-	global.client_lookup[ckey] = src
-	global.clients += src
+	GLOB.client_lookup[ckey] = src
+	GLOB.clients += src
 	// calls mob.Login()
 	. = ..()
 
 /client/Destroy()
 	// unregister global
-	global.client_lookup -= ckey
-	global.clients -= src
+	GLOB.client_lookup -= ckey
+	GLOB.clients -= src
 	#warn impl
 	..()
 	return gc_client_deleting? QDEL_HINT_IGNORE : QDEL_HINT_IMMEDIATE

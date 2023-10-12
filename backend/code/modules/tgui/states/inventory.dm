@@ -12,6 +12,8 @@
 
 GLOBAL_DATUM_INIT(inventory_state, /datum/ui_state/inventory_state, new)
 
+#warn this is most definitely not how our inv will work
+
 /datum/ui_state/inventory_state/can_use_topic(src_object, mob/user)
 	if(!(src_object in user))
 		return UI_CLOSE

@@ -87,6 +87,7 @@
 #include "backend\code\game\objs\obj.dm"
 #include "backend\code\game\turfs\turf.dm"
 #include "backend\code\game\turfs\subtypes\unallocated.dm"
+#include "backend\code\modules\admin\audit_helpers.dm"
 #include "backend\code\modules\tgui\external.dm"
 #include "backend\code\modules\tgui\module.dm"
 #include "backend\code\modules\tgui\states.dm"
