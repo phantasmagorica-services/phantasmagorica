@@ -3,3 +3,6 @@
  */
 /datum/controller
 	abstract_type = /datum/controller
+
+	/// name
+	var/name = "Controller"

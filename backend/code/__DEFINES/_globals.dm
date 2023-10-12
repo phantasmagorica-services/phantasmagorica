@@ -13,7 +13,7 @@
 #define GLOBAL_LIST_INIT(NAME, VAL) \
 /datum/controller/globals/var/list/##NAME;
 
-#define GLOBAL_LIST_EMPTY(NAME, VAL) \
+#define GLOBAL_LIST_EMPTY(NAME) \
 /datum/controller/globals/var/list/##NAME;
 
 #define GLOBAL_DATUM(NAME, PATH) \

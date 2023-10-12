@@ -58,7 +58,7 @@ DEFINE_BITFIELD(subsystem_runlevels, list(
 
 //* Subsystem init priorities - lower is higher
 
-#define INIT_PRIORITY_DEFAULT 0
+#define INIT_ORDER_DEFAULT 0
 
 //* Subsystem tick priorities - higher is higher
 
@@ -73,3 +73,9 @@ DEFINE_BITFIELD(subsystem_runlevels, list(
 //? BACKGROUND SUBSYSTEMS ?//
 
 // none yet
+
+//* /datum/controller/subsystem/var/initialized
+
+#define SS_INIT_NOT_STARTED 0
+#define SS_INIT_IN_PROGRESS 1
+#define SS_INIT_FINISHED 2

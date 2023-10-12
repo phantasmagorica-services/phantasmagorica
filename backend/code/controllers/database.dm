@@ -2,6 +2,7 @@
  * # Database
  */
 CONTROLLER_DEF(database, Database)
+	name = "Database"
 
 #warn impl
 
