@@ -79,3 +79,28 @@ DEFINE_BITFIELD(subsystem_runlevels, list(
 #define SS_INIT_NOT_STARTED 0
 #define SS_INIT_IN_PROGRESS 1
 #define SS_INIT_FINISHED 2
+
+//* /datum/controller/subsystem/proc/initialize() retvals
+
+#define SS_INIT_SUCCESS 0
+#define SS_INIT_FAILED 1
+
+//* /datum/controller/subsystem/proc/shutdown() retvals
+
+#define SS_SHUTDOWN_SUCCESS 0
+#define SS_SHUTDOWN_FAILED 1
+
+//* /datum/controller/subsystem/var/status
+
+/// doing nothing
+#define SS_IDLE " "
+/// subsystem igniting - you shouldn't see this on any UI
+#define SS_IGNITING "I"
+/// this is the one running right now
+#define SS_FIRING "R"
+/// something is sleep()ing - not good
+#define SS_SLEEPING "S"
+/// paused due to tick usage
+#define SS_PAUSED "P"
+/// pausing for an amount of time
+#define SS_POSTPONED "W"
