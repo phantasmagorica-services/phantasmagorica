@@ -58,3 +58,11 @@
 
 /proc/cmp_name_dsc(atom/a, atom/b)
 	return sorttext(a.name, b.name)
+
+//* Controllers *//
+
+/proc/cmp_subsystem_init_order(datum/controller/subsystem/a, datum/controller/subsystem/b)
+	return a.init_order - b.init_order
+
+/proc/cmp_subsystem_shutdown_order(datum/controller/subsystem/a, datum/controller/subsystem/b)
+	return b.init_order - a.init_order

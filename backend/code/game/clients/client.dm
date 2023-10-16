@@ -27,7 +27,7 @@ GLOBAL_LIST_EMPTY(clients)
 	GLOB.clients -= src
 	#warn impl
 	..()
-	return gc_client_deleting? QDEL_HINT_IGNORE : QDEL_HINT_IMMEDIATE
+	return gc_client_deleting? QDEL_HINT_UNMANAGED : QDEL_HINT_IMMEDIATE
 
 /client/Del()
 	gc_client_deleting = TRUE

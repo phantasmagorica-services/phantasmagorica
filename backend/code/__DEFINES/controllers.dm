@@ -51,6 +51,9 @@ DEFINE_BITFIELD(subsystem_runlevels, list(
 	/datum/controller/subsystem = list(
 		"runlevels",
 	),
+	/datum/controller/ticker = list(
+		"runlevels",
+	),
 ), list(
 	BITFIELD("Init", SS_RUNLEVEL_INIT),
 	BITFIELD("Main", SS_RUNLEVEL_GAME),
@@ -95,7 +98,7 @@ DEFINE_BITFIELD(subsystem_runlevels, list(
 
 #define SS_RECOVER_SUCCESS 0
 #define SS_RECOVER_FAILED 1
-#define SS_RECOVER_IGNORE 2
+#define SS_RECOVER_IGNORED 2
 
 //* /datum/controller/subsystem/var/status
 
@@ -115,8 +118,7 @@ DEFINE_BITFIELD(subsystem_runlevels, list(
 //* Helpers
 
 /// use during subsystem fire() call chain - returns if we should yield
-#define SS_SHOULD_YIELD FALSE
+#define SS_SHOULD_YIELD prob(2)
+#warn impl
 /// automatically yields ; do if(SS_AUTO_YIELD): return in fire().
-#define SS_AUTO_YIELD FALSE
-
-#warn impl above
+#define SS_AUTO_YIELD (SS_SHOULD_YIELD? pause() : FALSE)

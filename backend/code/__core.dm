@@ -37,7 +37,7 @@
 /**
  * used as a value to determine whether to call a global proc
  */
-/datum/global_proc_sentinel
+/datum/__global_proc_sentinel
 
 #define GLOBAL_PROC /datum/__global_proc_sentinel
 
@@ -46,7 +46,7 @@
  */
 /world/proc/__invoke_async(delegate, procpath, ...)
 	set waitfor = FALSE
-	if(delegate == /datum/global_proc_sentinel)
+	if(delegate == /datum/__global_proc_sentinel)
 		call(procpath)(arglist(args.Copy(3)))
 	else
 		call(delegate, procpath)(arglist(args.Copy(3)))

@@ -67,3 +67,10 @@
  */
 /datum/controller/subsystem/proc/suspend(ticks)
 	#warn impl
+
+/**
+ * called to pause when we've run out of tick
+ */
+/datum/controller/subsystem/proc/pause()
+	#warn impl
+	return TRUE
