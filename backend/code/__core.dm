@@ -69,3 +69,10 @@
 #define QDEL_LIST(LIST) if(!isnull(LIST)) { for(var/i in 1 to length(LIST)) { qdel(LIST[i]; )}; LIST.len = 0; LIST = null;}
 #define QDEL_LIST_ASSOC_VAL if(!isnull(LIST)) { for(var/key in LIST) { qdel(LIST[key]); }; LIST.len = 0; LIST = null;}
 #define QDEL_LIST_ASSOC_KEY if(!isnull(LIST)) { for(var/key in LIST) { qdel(key); }; LIST.len = 0; LIST = null;}
+
+//* Grabbing mob / clients from mob-client variables
+
+/// Gets mob from a var that holds mob or client, if the var is valid
+#define MOB_FROM_VAR(V) (iscilent(V)? (V:mob) : (ismob(V)? V : null))
+/// Gets client from a var that holds mob or client, if the var is valid
+#define CLIENT_FROM_VAR(V) (iscilent(V)? (V) : (ismob(V)? V:client : null))

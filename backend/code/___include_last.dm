@@ -5,8 +5,11 @@
 
 /datum/__boot_delegate
 
-/datum/__boot_delegate/New()
-	#warn impl
+/datum/__boot_delegate/proc/execute()
+	global.Initialization = new
+	global.Initialization.Boot()
+
 
 /proc/__boot_delegate()
 	var/static/datum/__boot_delegate = new
+	__boot_delegate.execute()
