@@ -69,6 +69,7 @@ DEFINE_BITFIELD(subsystem_runlevels, list(
 //? NORMAL SUBSYSTEMS ?//
 
 #define FIRE_PRIORITY_DEFAULT 0
+#define FIRE_PRIORITY_TGUI 100
 
 //? BACKGROUND SUBSYSTEMS ?//
 
@@ -90,6 +91,12 @@ DEFINE_BITFIELD(subsystem_runlevels, list(
 #define SS_SHUTDOWN_SUCCESS 0
 #define SS_SHUTDOWN_FAILED 1
 
+//* /datum/controller/subsystem/proc/recover() retvals
+
+#define SS_RECOVER_SUCCESS 0
+#define SS_RECOVER_FAILED 1
+#define SS_RECOVER_IGNORE 2
+
 //* /datum/controller/subsystem/var/status
 
 /// doing nothing
@@ -104,3 +111,12 @@ DEFINE_BITFIELD(subsystem_runlevels, list(
 #define SS_PAUSED "P"
 /// pausing for an amount of time
 #define SS_POSTPONED "W"
+
+//* Helpers
+
+/// use during subsystem fire() call chain - returns if we should yield
+#define SS_SHOULD_YIELD FALSE
+/// automatically yields ; do if(SS_AUTO_YIELD): return in fire().
+#define SS_AUTO_YIELD FALSE
+
+#warn impl above

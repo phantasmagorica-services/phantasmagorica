@@ -1,5 +1,6 @@
 /datum/controller/subsystem
 	name = "Subsystem"
+
 	/// flags
 	var/subsystem_flags = NONE
 	/// interval in deciseconds
@@ -12,6 +13,8 @@
 	var/init_order = INIT_ORDER_DEFAULT
 	/// can fire? set to FALSE to block firing. unlike SS_NO_FIRE, this is able to be modified on the fly, rather than being permanent.
 	var/can_fire = TRUE
+	/// when do we run?
+	var/runlevels = SS_RUNLEVEL_GAME
 
 #warn today i build a process scheduler
 
@@ -28,6 +31,24 @@
 	return SS_SHUTDOWN_SUCCESS
 
 /**
+ * called as we're created
+ *
+ * do not put expensive code in here
+ *
+ * @params
+ * * rebuilding - are we recover()ing midrun?
+ */
+/datum/controller/subsystem/proc/construct(rebuilding)
+
+/**
+ * recover
+ *
+ * the global variable we're in is still set to the old instance, if applicable
+ */
+/datum/controller/subsystem/proc/recover()
+	return SS_RECOVER_IGNORED
+
+/**
  * called to fire by ticker
  */
 /datum/controller/subsystem/proc/ignite()
@@ -36,7 +57,13 @@
 /**
  * called to do its work
  */
-/datum/controller/subsystem/proc/fire(dt, times_fired)
+/datum/controller/subsystem/proc/fire(resumed, deciseconds, times_fired)
 	subsystem_flags |= SS_NO_FIRE
 	can_fire = FALSE
 	CRASH("base of fire() reached; please mark this subsystem with SS_NO_FIRE since it clearly isn't doing anything.")
+
+/**
+ * called to suspend for a number of ticks
+ */
+/datum/controller/subsystem/proc/suspend(ticks)
+	#warn impl

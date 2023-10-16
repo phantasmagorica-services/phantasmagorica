@@ -13,10 +13,10 @@
  */
 SUBSYSTEM_DEF(tgui)
 	name = "TGUI"
-	wait = 9
+	interval = 0.5 SECONDS
 	subsystem_flags = SS_NO_INIT
-	priority = FIRE_PRIORITY_TGUI
-	runlevels = RUNLEVEL_LOBBY | RUNLEVELS_DEFAULT
+	fire_priority = FIRE_PRIORITY_TGUI
+	runlevels = SS_RUNLEVEL_GAME | SS_RUNLEVEL_INIT
 
 	/// A list of UIs scheduled to process
 	var/list/current_run = list()
@@ -27,25 +27,21 @@ SUBSYSTEM_DEF(tgui)
 	/// The HTML base used for all UIs.
 	var/basehtml
 
-/datum/controller/subsystem/tgui/PreInit(recovering)
+/datum/controller/subsystem/tgui/construct(rebuilding)
 	basehtml = file2text('tgui/public/tgui.html')
 	// Inject inline polyfills
 	var/polyfill = file2text('tgui/public/tgui-polyfill.min.js')
 	polyfill = "<script>\n[polyfill]\n</script>"
 	basehtml = replacetextEx(basehtml, "<!-- tgui:inline-polyfill -->", polyfill)
 
-/datum/controller/subsystem/tgui/Shutdown()
+/datum/controller/subsystem/tgui/shutdown()
 	close_all_uis()
-/* //no tguistat
-/datum/controller/subsystem/tgui/stat_entry(msg)
-	msg = "P:[length(open_uis)]"
-	return ..()
-*/
+	return SS_SHUTDOWN_SUCCESS
 
 /datum/controller/subsystem/tgui/stat_entry()
 	return ..() + " P:[length(open_uis)]"
 
-/datum/controller/subsystem/tgui/fire(resumed = FALSE)
+/datum/controller/subsystem/tgui/fire(resumed, deciseconds, times_fired)
 	if(!resumed)
 		src.current_run = open_uis.Copy()
 	// Cache for sanic speed (lists are references anyways)
@@ -58,7 +54,7 @@ SUBSYSTEM_DEF(tgui)
 			ui.process()
 		else
 			open_uis.Remove(ui)
-		if(MC_TICK_CHECK)
+		if(SS_AUTO_YIELD)
 			return
 
 /**
