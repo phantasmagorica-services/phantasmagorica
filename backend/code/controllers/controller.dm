@@ -37,4 +37,4 @@
  */
 /datum/controller/proc/init_log_fatal(msg)
 
-#warn impl
+#warn impl + log everything, including announces
