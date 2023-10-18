@@ -1,2 +1,2 @@
 /// signature: ()
-#define DSIG_DATUM_QDESTROYING "datum_qdestroying"
+#define DSIG_DATUM_QDELETING "datum_qdestroying"

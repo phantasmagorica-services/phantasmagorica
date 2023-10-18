@@ -71,27 +71,6 @@
 		return UI_UPDATE
 	return UI_INTERACTIVE
 
-/*
-/mob/living/shared_ui_interaction(src_object)
-	. = ..()
-	if(!(mobility_flags & MOBILITY_CAN_UI) && . == UI_INTERACTIVE)
-		return UI_UPDATE
-*/
-
-/mob/living/silicon/ai/shared_ui_interaction(src_object)
-	// Disable UIs if the AI is unpowered.
-	// if(apc_override == src_object) //allows AI to (eventually) use the interface for their own APC even when out of power
-	// 	return UI_INTERACTIVE
-	if(lacks_power())
-		return UI_DISABLED
-	return ..()
-
-/mob/living/silicon/robot/shared_ui_interaction(src_object)
-	// Disable UIs if the object isn't installed in the borg AND the borg is either locked, has a dead cell, or no cell.
-	var/atom/device = src_object
-	if((istype(device) && device.loc != src) && (!cell || cell.charge <= 0 || lockcharge))
-		return UI_DISABLED
-	return ..()
 
 /**
  * public
@@ -119,11 +98,6 @@
 	// Otherwise, we got nothing.
 	return UI_CLOSE
 
-/mob/living/carbon/human/shared_living_ui_distance(atom/movable/src_object, viewcheck = TRUE, allow_tk = TRUE)
-	if(allow_tk && (MUTATION_TELEKINESIS in mutations))
-	// if(allow_tk && dna.check_mutation(/datum/mutation/human/telekinesis) && tkMaxRangeCheck(src, src_object))
-		return UI_INTERACTIVE
-	return ..()
 
 /**
  * public

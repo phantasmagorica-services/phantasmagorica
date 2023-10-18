@@ -11,5 +11,5 @@
 
 
 /proc/__boot_delegate()
-	var/static/datum/__boot_delegate = new
-	__boot_delegate.execute()
+	var/static/datum/__boot_delegate/delegate = new
+	delegate.execute()

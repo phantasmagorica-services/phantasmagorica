@@ -405,7 +405,7 @@
 
 /datum/tgui_window/proc/remove_mouse_macro()
 	if(!mouse_event_macro_set)
-		stack_trace("Unsetting mouse macro on tgui window that has none")
+		SOFT_CRASH("Unsetting mouse macro on tgui window that has none")
 	var/list/byondToTguiEventMap = list(
 		"MouseDown" = "byond/mousedown",
 		"MouseUp" = "byond/mouseup"

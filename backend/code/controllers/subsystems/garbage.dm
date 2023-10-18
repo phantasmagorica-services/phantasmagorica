@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(garbage)
 		return
 
 	// signal destruction
-	RAISE_SIGNAL(thing, DSIG_DATUM_QDESTROYING)
+	RAISE_SIGNAL(thing, DSIG_DATUM_QDELETING)
 	// call destroy
 	thing.gc_destroyed = GC_IN_DESTROY
 	var/start_time = world.time

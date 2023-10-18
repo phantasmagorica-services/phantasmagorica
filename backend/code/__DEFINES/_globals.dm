@@ -22,6 +22,11 @@
 #define GLOBAL_DATUM_INIT(NAME, PATH, VAL) \
 /datum/controller/globals/var##PATH/##NAME;
 
-#define GLOBAL_REAL_VAR(NAME) var/global/##NAME
-#define GLOBAL_REAL_LIST(NAME) var/global/list/##NAME
-#define GLOBAL_REAL_DATUM(NAME, PATH) var/global##PATH/##NAME
+#define GLOBAL_REAL_VAR(NAME) \
+var/global/##NAME;
+
+#define GLOBAL_REAL_LIST(NAME) \
+var/global/list/##NAME;
+
+#define GLOBAL_REAL_DATUM(NAME, PATH) \
+var/global##PATH/##NAME;
