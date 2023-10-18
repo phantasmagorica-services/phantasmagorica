@@ -3,7 +3,7 @@
  *! SPDX-License-Identifier: MIT
  */
 
-#warn impl
+#warn client implementation
 
 /**
  * tgui subsystem
@@ -90,7 +90,7 @@ SUBSYSTEM_DEF(tgui)
 			window_found = TRUE
 			break
 	if(!window_found)
-		log_tgui(user, "Error: Pool exhausted",
+		Logging.log_tgui(user, "Error: Pool exhausted",
 			context = "SStgui/request_pooled_window")
 		return null
 	return window
@@ -103,7 +103,7 @@ SUBSYSTEM_DEF(tgui)
  * required user mob
  */
 /datum/controller/subsystem/tgui/proc/force_close_all_windows(mob/user)
-	log_tgui(user, context = "SStgui/force_close_all_windows")
+	Logging.log_tgui(user, context = "SStgui/force_close_all_windows")
 	if(user.client)
 		user.client.tgui_windows = list()
 		for(var/i in 1 to TGUI_WINDOW_HARD_LIMIT)
@@ -119,13 +119,11 @@ SUBSYSTEM_DEF(tgui)
  * required window_id string
  */
 /datum/controller/subsystem/tgui/proc/force_close_window(mob/user, window_id)
-	log_tgui(user, context = "SStgui/force_close_window")
+	Logging.log_tgui(user, context = "SStgui/force_close_window")
 	// Close all tgui datums based on window_id.
 	for(var/datum/tgui/ui in user.tgui_open_uis)
 		if(ui.window && ui.window.id == window_id)
 			ui.close(can_be_suspended = FALSE)
-	// Unset machine just to be sure.
-	user.unset_machine()
 	// Close window directly just to be sure.
 	user << browse(null, "window=[window_id]")
 

@@ -2,10 +2,10 @@
 	#warn impl
 
 /proc/deltimer(timerid)
-	#warn impl
+	qdel(SStimer.timerid_dict[timerid])
 
 /proc/gettimer(timerid)
-	#warn impl
+	return SStimer.timerid_dict[timerid]
 
 /**
  * Scheduled callback
@@ -19,6 +19,15 @@
 	var/delay
 	/// timer flags
 	var/timer_flags
+	/// numerical id, for stoppable timers
+	var/id
+	/// hash, for unique timers
+	var/hash
+
+	/// linkedlist - next
+	var/datum/timer/next
+	/// linkedlist - prev
+	var/datum/timer/prev
 
 /datum/timer/New(datum/callback/callback, delay, flags = NONE)
 	src.delay = delay

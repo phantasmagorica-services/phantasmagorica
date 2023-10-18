@@ -8,7 +8,7 @@
 //* Float Values *//
 
 /// above/below this value in positive/negative, precision is below 1's place
-#define INTEGER_PRECISION 16777216
+#define INTEGER_PRECISION (2**24)
 #define INFINITY (1.#INF)
 
 //* Core Helpers *//

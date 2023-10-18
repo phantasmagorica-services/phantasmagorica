@@ -17,9 +17,20 @@ SUBSYSTEM_DEF(garbage)
 
 	/// timeout before something's considered for annihilation
 	var/hard_delete_timeout = 2 MINUTES
+	/// ensure this many things are hard del'd before going back to queue
+	var/annihilation_sweep_limit = 100
+	/// if we complete a sweep with nothing to do, postpone for this much time
+	var/empty_sweep_postpone = 30 SECONDS
 
-#warn impl
+	/// currently sweeping annihilation queues
+	var/sweep_annihilation = FALSE
+	/// current sweep index
+	var/sweep_index
+
 #warn recover should fully sweep queues
+
+/datum/controller/subsystem/garbage/fire(resumed, deciseconds, times_fired)
+
 
 /datum/controller/subsystem/garbage/proc/queue(datum/thing)
 	thing.gc_destroyed = world.time
@@ -27,6 +38,9 @@ SUBSYSTEM_DEF(garbage)
 	queue_times += world.time
 
 /proc/qdel(datum/thing)
+	if(isnull(thing))
+		// already gone
+		return
 	if(!istype(thing))
 		// this will potentially throw a bad del error.
 		del thing

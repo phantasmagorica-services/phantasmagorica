@@ -19,3 +19,8 @@ DEFINE_BITFIELD(timer_flags, list(
 	BITFIELD("Override", TIMER_FLAG_OVERRIDE),
 	BITFIELD("Hash Wait", TIMER_FLAG_HASH_WAIT),
 ))
+
+//* system constants
+
+/// we keep timers within this interval in main buckets
+#define TIMER_SYSTEM_INTERVAL 2 MINUTES

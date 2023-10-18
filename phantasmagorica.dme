@@ -65,6 +65,7 @@
 #include "backend\code\controllers\subsystems\database.dm"
 #include "backend\code\controllers\subsystems\garbage.dm"
 #include "backend\code\controllers\subsystems\tgui.dm"
+#include "backend\code\controllers\subsystems\timer.dm"
 #include "backend\code\datums\callback.dm"
 #include "backend\code\datums\datum.dm"
 #include "backend\code\datums\prototype.dm"

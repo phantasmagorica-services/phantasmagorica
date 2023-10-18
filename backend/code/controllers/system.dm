@@ -56,3 +56,10 @@ CONTROLLER_DEF(system, System)
 
 	sort_list(subsystems, /proc/cmp_subsystem_shutdown_order)
 
+/datum/controller/system/proc/set_fps(fps)
+	fps = clamp(fps, 1, 100)
+	var/old = world.fps
+	world.fps = fps
+	for(var/datum/controller/subsystem/subsystem in subsystems)
+		subsystem.fps_changed(old, fps)
+

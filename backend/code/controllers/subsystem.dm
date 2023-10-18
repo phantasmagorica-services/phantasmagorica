@@ -39,6 +39,7 @@
  * * rebuilding - are we recover()ing midrun?
  */
 /datum/controller/subsystem/proc/construct(rebuilding)
+	#warn hook
 
 /**
  * recover
@@ -74,3 +75,9 @@
 /datum/controller/subsystem/proc/pause()
 	#warn impl
 	return TRUE
+
+/**
+ * called when world.fps changes
+ */
+/datum/controller/subsystem/proc/fps_changed(old_fps, new_fps)
+	return
