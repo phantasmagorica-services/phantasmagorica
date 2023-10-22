@@ -72,7 +72,7 @@
 		if (world.IsBanned(row["ckey"], row["address"], row["computer_id"], real_bans_only = TRUE))
 			found = row
 			break
-		CHECK_TICK
+		YIELD_AUTO
 	// This fucker has a history of playing on a banned account.
 	if(found)
 		var/msg = "[key_name(client)] has a banned account in connection history! (Matched: [found["ckey"]], [found["address"]], [found["computer_id"]])"

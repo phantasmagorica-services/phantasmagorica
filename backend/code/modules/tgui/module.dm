@@ -44,7 +44,7 @@
 	if(expected_type && !istype(host, expected_type))
 		CRASH("bad host: [host] not [expected_type] instead [isdatum(host)? host.type : "(not datum)"]")
 	if(autodel && host)
-		register_signalhost, DSIG_DATUM_QDELETING, TYPE_PROC_REF(/datum/tgui_module, on_host_del)
+		register_signal(host, DSIG_DATUM_QDELETING, TYPE_PROC_REF(/datum/tgui_module, on_host_del))
 	ASSERT(!ephemeral || autodel)
 
 /datum/tgui_module/Destroy()

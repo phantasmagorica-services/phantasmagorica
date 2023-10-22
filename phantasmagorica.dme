@@ -23,7 +23,7 @@
 #include "backend\code\__DEFINES\callback.dm"
 #include "backend\code\__DEFINES\controllers.dm"
 #include "backend\code\__DEFINES\gc.dm"
-#include "backend\code\__DEFINES\istype.dm"
+#include "backend\code\__DEFINES\is_helpers.dm"
 #include "backend\code\__DEFINES\math.dm"
 #include "backend\code\__DEFINES\skin.dm"
 #include "backend\code\__DEFINES\tgui.dm"
