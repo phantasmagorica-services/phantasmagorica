@@ -1,6 +1,7 @@
 /datum/controller/subsystem
 	name = "Subsystem"
 
+	//* subsystem intrinsics
 	/// flags
 	var/subsystem_flags = NONE
 	/// interval in deciseconds
@@ -16,6 +17,18 @@
 	/// when do we run?
 	var/runlevels = SS_RUNLEVEL_GAME
 
+	//* tick tracking
+	/// times fired
+	var/times_fired = 0
+	/// last world.time fired
+	var/last_fire = 0
+	/// next world.time to fire
+	var/next_fire = 0
+	#warn ughhh the above is fucked; make sure to reset them in loop start
+
+	//* internal ticker system
+	/// prev subsystem in linked list of processing queue
+	var/datum/controller/subsystem/queue_prev
 	/// next subsystem in linked list of processing queue
 	var/datum/controller/subsystem/queue_next
 

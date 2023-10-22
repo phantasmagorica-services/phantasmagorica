@@ -66,3 +66,6 @@
 
 /proc/cmp_subsystem_shutdown_order(datum/controller/subsystem/a, datum/controller/subsystem/b)
 	return b.init_order - a.init_order
+
+/proc/cmp_subsystem_fire_priority(datum/controller/subsystem/a, datum/controller/subsystem/b)
+	return b.fire_priority - a.fire_priority

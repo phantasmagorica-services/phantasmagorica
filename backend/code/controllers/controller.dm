@@ -38,3 +38,15 @@
 /datum/controller/proc/init_log_fatal(msg)
 
 #warn impl + log everything, including announces
+
+/datum/controller/proc/announce_notice(msg)
+
+/datum/controller/proc/announce_issue(msg)
+
+/datum/controller/proc/announce_fatal(msg)
+
+/datum/controller/proc/log_notice(msg)
+
+/datum/controller/proc/log_issue(msg)
+
+/datum/controller/proc/log_fatal(msg)
