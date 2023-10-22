@@ -16,6 +16,9 @@
 	/// when do we run?
 	var/runlevels = SS_RUNLEVEL_GAME
 
+	/// next subsystem in linked list of processing queue
+	var/datum/controller/subsystem/queue_next
+
 #warn today i build a process scheduler
 
 /**

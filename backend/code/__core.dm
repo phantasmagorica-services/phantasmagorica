@@ -20,18 +20,16 @@
 
 #define NAMEOF(THING, VAR) #VAR || ##THING.##VAR
 
-#if DM_VERSION > 514
-	#error Update varrefs for 515 via nameof
-#endif
-
 //* Calling
 
-#define SELF_PROC_REF(NAME) (.proc/##NAME)
-#define TYPE_PROC_REF(TYPE, NAME) (##TYPE/.proc/##NAME)
-#define GLOB_PROC_REF(NAME) (/proc/##NAME)
-
-#if DM_VERSION > 514
-	#error Update procrefs for 515 via nameof
+#if DM_VERSION < 515
+	#define PROC_REF(X) (.proc/##X)
+	#define TYPE_PROC_REF(TYPE, X) (##TYPE.proc/##X)
+	#define GLOBAL_PROC_REF(X) (/proc/##X)
+#else
+	#define PROC_REF(X) (nameof(.proc/##X))
+	#define TYPE_PROC_REF(TYPE, X) (nameof(##TYPE.proc/##X))
+	#define GLOBAL_PROC_REF(X) (/proc/##X)
 #endif
 
 /**

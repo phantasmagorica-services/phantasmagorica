@@ -56,7 +56,7 @@
  * return datum/tgui The requested UI.
  */
 /datum/tgui/New(mob/user, datum/src_object, interface, title, datum/tgui/parent_ui)
-	log_tgui(user,
+	Logging.log_tgui(user,
 		"new [interface] fancy [user?.client?.prefs.tgui_fancy]",
 		src_object = src_object)
 	src.user = user
@@ -98,7 +98,8 @@
 	if(!window.is_ready())
 		window.initialize(
 			strict_mode = TRUE,
-			fancy = user.client.prefs.tgui_fancy,
+			fancy = TRUE,
+			// fancy = user.client.prefs.tgui_fancy,
 			assets = list(
 				get_asset_datum(/datum/asset/simple/tgui),
 			))
@@ -311,7 +312,7 @@
 		return
 	// Validate ping
 	if(!initialized && world.time - opened_at > TGUI_PING_TIMEOUT)
-		log_tgui(user, "Error: Zombie window detected, closing.",
+		Logging.log_tgui(user, "Error: Zombie window detected, closing.",
 			window = window,
 			src_object = src_object)
 		close(can_be_suspended = FALSE)
@@ -351,7 +352,7 @@
 		switch(copytext(type, 1, 5))
 			if("act/")	// normal act
 				var/action = copytext(type, 5)
-				log_tgui(user, "Action: [action] [href_list["payload"]]",
+				Logging.log_tgui(user, "Action: [action] [href_list["payload"]]",
 					window = window,
 					src_object = src_object)
 				process_status()
@@ -362,7 +363,7 @@
 				var/action = copytext(type, 5)
 				var/id = payload["$m_id"]
 				// log, update status
-				log_tgui(user, "Module: [action] [href_list["payload"]]",
+				Logging.log_tgui(user, "Module: [action] [href_list["payload"]]",
 					window = window,
 					src_object = src_object)
 				process_status()

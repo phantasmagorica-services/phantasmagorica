@@ -3,33 +3,33 @@
 /**
  * authentication / authorization / connect / disconnect logs
  */
-/datum/controller/subsystem/logging/proc/to_access_log(msg)
+/datum/controller/logging/proc/to_access_log(msg)
 
-/datum/controller/subsystem/logging/proc/to_admin_log(msg)
+/datum/controller/logging/proc/to_admin_log(msg)
 	#warn impl
 
-/datum/controller/subsystem/logging/proc/to_asset_log(msg)
+/datum/controller/logging/proc/to_asset_log(msg)
 	#warn impl
 
-/datum/controller/subsystem/logging/proc/to_inventory_log(msg)
+/datum/controller/logging/proc/to_inventory_log(msg)
 	#warn impl
 
 /**
  * mechanical combat logging
  */
-/datum/controller/subsystem/logging/proc/to_mechanics_log(msg)
+/datum/controller/logging/proc/to_mechanics_log(msg)
 	#warn impl
 
-/datum/controller/subsystem/logging/proc/to_misc_log(msg)
+/datum/controller/logging/proc/to_misc_log(msg)
 	#warn impl
 
 /**
  * rp & rp combat logging
  */
-/datum/controller/subsystem/logging/proc/to_roleplay_log(msg)
+/datum/controller/logging/proc/to_roleplay_log(msg)
 	#warn impl
 
-/datum/controller/subsystem/logging/proc/to_tgui_log(msg)
+/datum/controller/logging/proc/to_tgui_log(msg)
 	#warn impl
 
 //* Managed Logging Procs *//
@@ -40,7 +40,7 @@
  *
  * This function is stolen from /tg/station's TGUI client code, which is licensed under MIT.
  */
-/datum/controller/subsystem/logging/log_tgui(user, message, context,
+/datum/controller/logging/log_tgui(user, message, context,
 		datum/tgui_window/window,
 		datum/src_object)
 	var/entry = ""
