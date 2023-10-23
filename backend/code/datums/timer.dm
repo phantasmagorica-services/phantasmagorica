@@ -35,4 +35,8 @@
 	src.callback = callback
 	src.timer_flags = flags
 
+/datum/timer/Destroy()
+	#warn eject from subsystem
+	return ..()
+
 #warn impl

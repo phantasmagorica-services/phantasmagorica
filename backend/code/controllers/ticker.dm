@@ -58,6 +58,7 @@ CONTROLLER_DEF(ticker, Ticker)
 		if(reload_on_next_cycle)
 			announce_notice("-- ticker: reloading on request --")
 			return TICKER_LOOP_EXIT_INTENTIONAL
+
 		#warn do shit
 		sleep(0)
 	while(TRUE)

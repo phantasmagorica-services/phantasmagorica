@@ -69,12 +69,8 @@
 	type = null,
 	text = null,
 	avoid_highlighting = FALSE,
-	// FIXME: These flags are now pointless and have no effect
-	handle_whitespace = TRUE,
-	trailing_newline = TRUE,
-	confidential = FALSE
 )
-	if(isnull(Master) || !SSchat?.initialized || Master.current_runlevel == RUNLEVEL_INIT)
+	if(SSchat?.initialized != SS_INIT_FINISHED)
 		to_chat_immediate(target, html, type, text, avoid_highlighting)
 		return
 

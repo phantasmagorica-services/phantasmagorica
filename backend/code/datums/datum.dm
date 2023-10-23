@@ -26,9 +26,8 @@
  * called when we're being deleted
  */
 /datum/Destroy()
-	#warn gc system
-	#warn clear timers
-	#warn clear signals
+	QDEL_LIST(timers)
+	clear_signals()
 	return QDEL_HINT_QUEUE
 
 /datum/proc/register_signal(datum/target, signal, procref)
@@ -38,9 +37,15 @@
 	#warn impl
 
 /datum/proc/clear_signals()
-	#warn impl
+	for(var/datum/D as anything in signal_outgoing)
+		for(var/signal in signal_outgoing[D])
+			unregister_signal(D, signal)
+	for(var/signal in signal_lookup)
+		for(var/datum/D as anything in signal_lookup[signal])
+			D.unregister_signal(src, signal)
 
 /datum/proc/__raise_signal(signal, ...)
+	. = NONE
 	#warn impl
 
 /**
