@@ -44,6 +44,7 @@
 #include "backend\code\__HELPERS\comparators.dm"
 #include "backend\code\__HELPERS\types.dm"
 #include "backend\code\__HELPERS\datastructures\priority_queue.dm"
+#include "backend\code\__HELPERS\lists\merge.dm"
 #include "backend\code\__HELPERS\lists\shuffle.dm"
 #include "backend\code\__HELPERS\lists\sort.dm"
 #include "backend\code\__HELPERS\math\angle.dm"

@@ -11,6 +11,9 @@
 /datum/controller/logging/proc/to_asset_log(msg)
 	#warn impl
 
+/datum/controller/logging/proc/to_config_log(msg)
+	#warn impl
+
 /datum/controller/logging/proc/to_inventory_log(msg)
 	#warn impl
 
@@ -34,13 +37,16 @@
 
 //* Managed Logging Procs *//
 
+/datum/controller/logging/proc/log_config(msg)
+	to_config_log(msg)
+
 /**
  * Appends a tgui-related log entry.
  * All arguments are optional.
  *
  * This function is stolen from /tg/station's TGUI client code, which is licensed under MIT.
  */
-/datum/controller/logging/log_tgui(user, message, context,
+/datum/controller/logging/proc/log_tgui(user, message, context,
 		datum/tgui_window/window,
 		datum/src_object)
 	var/entry = ""
